@@ -1,0 +1,10 @@
+body{
+    margin: 0;
+}
+.App {
+    font-family: sans-serif;
+    text-align: center;
+    background: -webkit-linear-gradient(45deg, #f08daf 0%,#99b7ca 95%);
+    height: 570px;
+    padding-top: 100px;
+}
