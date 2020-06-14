@@ -63,7 +63,7 @@ const Form = () => {
                 <input
                     className={!validation.email ? 'invalid' : null}
                     name='email'
-                    type='email'
+                    type='text'
                     value={data.email}
                     onChange={onHandleInputChange}/>
             </div>
