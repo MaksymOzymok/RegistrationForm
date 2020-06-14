@@ -44,7 +44,8 @@
     height: 40px;
     display: block;
     font-weight: bold;
-    background: #37bae5;
+    background-color: deepskyblue;
+
     border: none;
     border-radius: 3px;
     width: 100px;
@@ -53,8 +54,8 @@
     transition: 0.2s;
 }
 .sign-up-btn:hover{
-    transform: scale(1.05);
-    opacity: 80%;
+    background: hotpink;
+    color: white;
 }
 .invalid{
     border: red 2px solid;
