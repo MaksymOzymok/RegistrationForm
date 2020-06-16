@@ -1,22 +1,35 @@
-/*
-class EventEmitter {}
+class EventEmitter {
+    constructor() {
+        this.events = {};
+    }
 
-const emitter = new EventEmitter();
+    emit(eventName, data) {
+        const event = this.events[eventName];
+        if( event ) {
+            event.forEach(fn => {
+                fn.call(null, data);
+            });
+        }
 
-const unsub = emitter.on("poof!", event => {
-    console.log("PUFF: ", event);
-});
+    }
 
-emitter.emit("poof!", "PFFF");
+    on(event, func) {
+        if (this.events[event]) {
+            // don't add duplicates.
+            if (this.events[event].indexOf(func) !== -1) return;
 
-emitter.on("poof!", event => {
-    console.log("DUFF: ", event);
-});
+            return this.events[event].push(func);
+        }
 
-emitter.emit("poof!", "PFFF");
-// 2 handlers fired
+        this.events[event] = [func];
 
-// unsub(); unsubscribes specific listener
+       return  () =>{
+           //delete specific listener
+           this.events = this.events[event].filter(eventFunc => eventFunc!==func);
 
-// can be few event names
-*/
+       }
+    }
+
+}
+export default EventEmitter;
+
