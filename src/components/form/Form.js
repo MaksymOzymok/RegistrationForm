@@ -47,7 +47,7 @@ const Form = () => {
 
     const errors = [];
     if (!validation.email)
-        errors.push(<p className='error'>You have enter a wrong format of email</p>);
+        errors.push(<p className='error'>You have entered a wrong format of email</p>);
     if (!validation.password)
         errors.push(<p className='error'>Your password is too short</p>);
 
